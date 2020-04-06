@@ -1,0 +1,77 @@
+.button {
+  margin: 30px auto;
+  width: 270px;
+  display: block;
+  border: none;
+  border-radius: 5px;
+  background-color: darkslateblue;
+  box-shadow: 0 0 3px lightgray;
+  color: #ffffff;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.button:hover {
+  background-color: indigo;
+}
+
+.buttons {
+  margin: 10px;
+}
+
+.columnButton {
+  background-color: darkslateblue;
+  box-shadow: 0 0 3px lightgray;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.columnButton:hover {
+  background-color: indigo;
+}
+
+.columnButton:first-of-type {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.columnButton:last-of-type {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.two {
+  display: flex;
+  justify-content: space-around;
+}
+
+.two textarea {
+  max-width: 40%;
+  padding: 10px;
+  text-align: left;
+}
+
+.tree {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tree p {
+  width: 30%;
+}
+
+.view textarea {
+  min-height: 300px;
+  margin: 10px auto;
+  resize: none;
+  border: none;
+}
+
+
+

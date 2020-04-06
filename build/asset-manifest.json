@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/consol-test/build/static/css/main.5326e67d.chunk.css",
+    "main.js": "/consol-test/build/static/js/main.f763d5cd.chunk.js",
+    "main.js.map": "/consol-test/build/static/js/main.f763d5cd.chunk.js.map",
+    "runtime-main.js": "/consol-test/build/static/js/runtime-main.3d5a0697.js",
+    "runtime-main.js.map": "/consol-test/build/static/js/runtime-main.3d5a0697.js.map",
+    "static/js/2.794c8322.chunk.js": "/consol-test/build/static/js/2.794c8322.chunk.js",
+    "static/js/2.794c8322.chunk.js.map": "/consol-test/build/static/js/2.794c8322.chunk.js.map",
+    "index.html": "/consol-test/build/index.html",
+    "precache-manifest.6121441abcb3899e370e709bb02b72b0.js": "/consol-test/build/precache-manifest.6121441abcb3899e370e709bb02b72b0.js",
+    "service-worker.js": "/consol-test/build/service-worker.js",
+    "static/css/main.5326e67d.chunk.css.map": "/consol-test/build/static/css/main.5326e67d.chunk.css.map",
+    "static/js/2.794c8322.chunk.js.LICENSE.txt": "/consol-test/build/static/js/2.794c8322.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3d5a0697.js",
+    "static/js/2.794c8322.chunk.js",
+    "static/css/main.5326e67d.chunk.css",
+    "static/js/main.f763d5cd.chunk.js"
+  ]
+}
