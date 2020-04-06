@@ -31,14 +31,22 @@ const PageLayout = ({text, onHandleChange}) => {
 
   const [ editableText, setEditableText ] = useState(text);
 
-  const [ editableText1from2, setEditableText1from2 ] = useState('');
-  const [ editableText2from2, setEditableText2from2 ] = useState('');
+  const [ editableText1from2, setEditableText1from2 ] = useState(arrToString(twoColumn(editableText).part1));
+  const [ editableText2from2, setEditableText2from2 ] = useState(arrToString(twoColumn(editableText).part2));
 
-  // const update = () => {
-  //   setEditableText(editableText1from2+" "+editableText2from2);
-  //   onHandleChange(editableText);
-  //   onHandleChange(editableText1from2+" "+editableText2from2);
-  // }
+  const [ editableText1from3, setEditableText1from3 ] = useState(arrToString(treeColumn(editableText).part1));
+  const [ editableText2from3, setEditableText2from3 ] = useState(arrToString(treeColumn(editableText).part2));
+  const [ editableText3from3, setEditableText3from3 ] = useState(arrToString(treeColumn(editableText).part3));
+
+  const update = () => {
+    setEditableText(editableText);
+    setEditableText1from2(arrToString(twoColumn(editableText).part1));
+    setEditableText2from2(arrToString(twoColumn(editableText).part2));
+    setEditableText1from3(arrToString(treeColumn(editableText).part1));
+    setEditableText2from3(arrToString(treeColumn(editableText).part2));
+    setEditableText3from3(arrToString(treeColumn(editableText).part3));
+    onHandleChange(editableText);
+  };
 
 
   const handleClick = e => {
@@ -48,20 +56,19 @@ const PageLayout = ({text, onHandleChange}) => {
         setOne(true);
         setTwo(false);
         setTree(false);
-        // update();
+        update();
     } else if (e.target.classList.contains('button2')) {
       setTwo(true);
       setTree(false);
       setOne(false);
-      // update();
-
+      update();
     } else {
       setTree(true);
       setOne(false);
       setTwo(false);
-      // update();
+      update();
     }
-  }
+  };
 
   const handleChangeText = (e) => {
     setEditableText(e.target.value);
@@ -75,8 +82,24 @@ const PageLayout = ({text, onHandleChange}) => {
     }
     if (e.target.name === 'textarea2') {
       setEditableText2from2(e.target.value);
+      // update();
       onHandleChange(editableText1from2+' '+editableText2from2);
+      // onHandleChange(editableText);
     }
+    setEditableText(editableText1from2+' '+editableText2from2);
+  };
+
+  const handleChangeTextTreeColumn = (e) => {
+    if (e.target.name === 'textarea3') {
+      setEditableText1from3(e.target.value);
+    }
+    if (e.target.name === 'textarea4') {
+      setEditableText2from3(e.target.value);
+    }
+    if (e.target.name === 'textarea5') {
+      setEditableText3from3(e.target.value);
+    }
+    setEditableText(editableText1from3+" "+editableText2from3+" "+editableText3from3);
   };
 
   return (
@@ -84,15 +107,40 @@ const PageLayout = ({text, onHandleChange}) => {
       {one && <TextArea name="text" onHandleChange={handleChangeText} text={editableText}/>}
       {two  && (
         <div className={styles.two}>
-          <TextArea name='textarea1' width={40} onHandleChange={handleChangeTextTwoColumn} text={arrToString(twoColumn(editableText).part1)}/>
-          <TextArea name='textarea2' width={40} onHandleChange={handleChangeTextTwoColumn} text={arrToString(twoColumn(editableText).part2)}/>
+          <TextArea
+            name='textarea1'
+            width={40}
+            onHandleChange={handleChangeTextTwoColumn}
+            text={editableText1from2}
+          />
+          <TextArea
+            name='textarea2'
+            width={40}
+            onHandleChange={handleChangeTextTwoColumn}
+            text={editableText2from2}
+          />
         </div>)
       }
       {tree && (
         <div className={styles.tree}>
-          <TextArea name='textarea3' width={30} onHandleChange={handleChangeText} text={arrToString(treeColumn(editableText).part1)}/>
-          <TextArea name='textarea4' width={30} onHandleChange={handleChangeText} text={arrToString(treeColumn(editableText).part2)}/>
-          <TextArea name='textarea5' width={30} onHandleChange={handleChangeText} text={arrToString(treeColumn(editableText).part3)}/>
+          <TextArea
+            name='textarea3'
+            width={30}
+            onHandleChange={handleChangeTextTreeColumn}
+            text={editableText1from3}
+          />
+          <TextArea
+            name='textarea4'
+            width={30}
+            onHandleChange={handleChangeTextTreeColumn}
+            text={editableText2from3}
+          />
+          <TextArea
+            name='textarea5'
+            width={30}
+            onHandleChange={handleChangeTextTreeColumn}
+            text={editableText3from3}
+          />
         </div>
       )}
       <div className={styles.buttons}>

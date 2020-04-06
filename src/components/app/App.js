@@ -17,7 +17,7 @@ class App extends Component {
 
   changeText = text => {
     this.setState({
-      text
+      text: text,
     });
   };
 
