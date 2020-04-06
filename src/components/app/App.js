@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <h2>Some Title</h2>
-        <Router>
+        <Router basename="/consol-test/build/">
 
         <Switch>
           <Route path="/layout">
